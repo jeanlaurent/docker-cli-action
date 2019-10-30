@@ -10,6 +10,5 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.docker }}
+  image: 'docker/docker:19.03.4'
+  entrypoint: "docker"
