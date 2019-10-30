@@ -3,17 +3,17 @@ on: [push]
 jobs:
   naive_docker_job:
     runs-on: ubuntu-latest
-    name: simple test of docker cli
+    name: 'simple test of docker cli'
     steps:
-    - name: docker version
+    - name: 'docker version'
       uses: jeanlaurent/docker-cli-action@master
       with:
         docker: version
-    - name: docker info
+    - name: 'docker info'
       uses: jeanlaurent/docker-cli-action@master
       with:
         docker: info
-    - name: docker pull & run
+    - name: 'docker pull & run'
       uses: jeanlaurent/docker-cli-action@master
       with:
         docker: run jeanlaurent/kamoulox
