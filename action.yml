@@ -1,0 +1,15 @@
+name: 'Docker Command Line'
+description: 'GitHub Actions for docker cli'
+author: 'Jean-Laurent de Morlhon <jeanlaurent@docker.com>'
+branding:
+  icon: 'package'
+  color: 'blue'
+inputs:
+  docker:
+    description: 'docker command'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.docker }}
