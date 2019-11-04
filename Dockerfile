@@ -1,3 +1,6 @@
 FROM docker:19.03.4
 
-ENTRYPOINT ["sh","-c","docker", "$*"]
+ENV DOCKERVERSION=19.03.4
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
