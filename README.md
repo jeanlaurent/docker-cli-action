@@ -13,6 +13,7 @@ in a workflow:
 
 Good:
 * simplest
+
 Bad:
 * you don't control the version
 * the version is weird (3.0.8???)
@@ -31,6 +32,7 @@ in a workflow:
 Good:
 * already shipped today
 * you control the version
+
 Bad:
 * it's not a github action
 
@@ -43,12 +45,15 @@ in a workflow:
       with:
         docker: version
 ```
-`jeanlaurent/docker-cli-action` should be replaced with `docker/docker-cli-action` or something like that.
-TODO: We should also expose the outputs for people to wire that in in github action.
+Notes:
+* `jeanlaurent/docker-cli-action` should be replaced with `docker/docker-cli-action` or something like that.
+* `master` could be replace with the exact cli version (tbc)
+* TODO: We should also expose the outputs for people to wire that in in github action.
 
 Good:
 * you control the version
 * it integrates nicely with the github action mecanism
+
 Bad:
-* This needs to be shipped with every engine release.
+* This needs to be updated with every engine release.
 
