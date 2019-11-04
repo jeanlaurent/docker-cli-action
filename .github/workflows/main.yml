@@ -1,9 +1,21 @@
 on: [push]
 
 jobs:
-  naive_docker_job:
+  simple_job_with_no_action:
     runs-on: ubuntu-latest
-    name: 'simple test of docker cli'
+    name: 'Running without github actions'
+    steps:
+    - name: 'docker version simple'
+      uses: docker://docker:19.03.4
+      with:
+        args: docker version
+    - name: 'docker simple run'
+      uses: docker://docker:19.03.4
+      with:
+        args: docker run jeanlaurent/kamoulox
+  simple_job_with_action:
+    runs-on: ubuntu-latest
+    name: 'Wrapping call with docker action'
     steps:
     - name: 'docker version'
       uses: jeanlaurent/docker-cli-action@master
@@ -16,4 +28,4 @@ jobs:
     - name: 'docker pull & run'
       uses: jeanlaurent/docker-cli-action@master
       with:
-        docker: run jeanlaurent/kamoulox
+        docker: "run jeanlaurent/kamoulox"
