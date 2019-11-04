@@ -11,6 +11,13 @@ in a workflow:
       run: docker version
 ```
 
+Good:
+* simplest
+Bad:
+* you don't control the version
+* the version is weird (3.0.8???)
+
+
 
 ## using the docker official docker image
 in a workflow:
@@ -21,6 +28,11 @@ in a workflow:
       with:
         args: docker version
 ```
+Good:
+* already shipped today
+* you control the version
+Bad:
+* it's not a github action
 
 
 ## using a custom github action
@@ -31,3 +43,12 @@ in a workflow:
       with:
         docker: version
 ```
+`jeanlaurent/docker-cli-action` should be replaced with `docker/docker-cli-action` or something like that.
+TODO: We should also expose the outputs for people to wire that in in github action.
+
+Good:
+* you control the version
+* it integrates nicely with the github action mecanism
+Bad:
+* This needs to be shipped with every engine release.
+
